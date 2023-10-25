@@ -14,8 +14,6 @@ const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelectorAll(".close")
 const submitBtn = document.querySelectorAll(".btn-submit");
 const fieldTest = document.getElementById("fieldtest");
-const firstNameRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
-const lastNameRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
 const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
 const form = document.getElementById('main-form');
 const modalBody = document.getElementById("modal-body");
@@ -100,8 +98,6 @@ function getEntries() {
   function validator() {
 
     dataErrorReset();
-    console.log(DDMMYYY_Validation(entries.birthdate.value));
-    console.log(entries.birthdate.value);
 
     if (entries.name.value.length <= 2) {
       formData[0].setAttribute('data-error', "Le prénom marche pas");
@@ -119,7 +115,7 @@ function getEntries() {
       formData[6].setAttribute('data-error', "Accepte les TOS stp");
     } else {
       modalBody.style.display = "none";
-      successBody.style.display = "block";
+      successBody.style.display = "flex";
       setInterval(function () {
         form.submit();
       }, 2000)
