@@ -100,19 +100,19 @@ function getEntries() {
     dataErrorReset();
 
     if (entries.name.value.length <= 2) {
-      formData[0].setAttribute('data-error', "Le prénom marche pas");
+      formData[0].setAttribute('data-error', "Le prénom est invalide");
     } else if (entries.surname.value.length <= 2) {
-      formData[1].setAttribute('data-error', "Le nom marche pas");
+      formData[1].setAttribute('data-error', "Le nom est invalide");
     } else if (validateEmail(entries.mail.value) == false) {
-      formData[2].setAttribute('data-error', "L\'email marche pas");
+      formData[2].setAttribute('data-error', "L\'email est invalide");
     } else if (DDMMYYY_Validation(entries.birthdate.value) == false) {
-      formData[3].setAttribute('data-error', "La date de naissance marche pas");
+      formData[3].setAttribute('data-error', "La date de naissance est invalide");
     } else if (entries.tnParticipation.checkValidity() == false) {
-      formData[4].setAttribute('data-error', "La date du TN marche pas");
+      formData[4].setAttribute('data-error', "Le nombre de participation est invalide");
     } else if (entries.checkboxes.length == 0) {
-      formData[5].setAttribute('data-error', "Le lieu marche pas");
+      formData[5].setAttribute('data-error', "Le lieu est invalide");
     } else if (entries.TOS.checked == false) {
-      formData[6].setAttribute('data-error', "Accepte les TOS stp");
+      formData[6].setAttribute('data-error', "Veuillez accépter les TOS");
     } else {
       modalBody.style.display = "none";
       successBody.style.display = "flex";
